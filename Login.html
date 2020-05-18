@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>Aqua-Mate</title>
+      <link href="css/styles.css" rel="stylesheet" />
+      <link href="css/login.css" rel="stylesheet" />
+
+      <!-- Font Awesome icons (free version)-->
+      <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+      <!-- Google fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+      <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" /> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    </head>
+    <body id="page-top" >
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">Aqua-Mate</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a  class="nav-link js-scroll-trigger" href="activity.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Our Mission</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    
+                   
+                    <div class="login-box">
+                        <div class="lb-header">
+                        <a href="#" class="active" id="login-box-link">Login</a>
+                        <a href="#"  id="signup-box-link">Sign Up</a>
+                        </div>
+                        
+                        <form class="username-login">
+                        <div class="u-form-group">
+                            <input id="login-usernme" type="username" placeholder="Username"/>
+                        </div>
+                        <div class="u-form-group">
+                            <input id="login-pass" type="password" placeholder="Password"/>
+                        </div>
+                        <div class="u-form-group">
+                            <button id="btn-login" type="button">Log in</button>
+                        </div>
+                       
+                        </form>
+                        <form class="username-signup">
+                        <div class="u-form-group">
+                            <input id="signup-usernme" type="username" placeholder="Username"/>
+                        </div>
+                        <div class="u-form-group">
+                            <input id="signup-password" type="password" placeholder="Password"/>
+                        </div>
+                        <div class="u-form-group">
+                            <input id="signup-password-confirm" type="password" placeholder="Confirm Password"/>
+                        </div>
+                        <div class="u-form-group">
+                            <button id="btn-signup" type="button">Sign Up</button>
+                        </div>
+                        </form>
+                    </div>
+                    
+
+                </div>
+
+                <script>
+
+
+                    $("#btn-signup").on('click',function() {
+                   var users = document.getElementById("signup-usernme").value;
+
+   $.ajax({
+      url: "https://aquapp.azurewebsites.net/checkUserID/",
+      type: 'get',
+      data:  {"userid": users},
+      success: function(result){
+        //   console.log(result);
+                 if(result!= "" ){
+                    alert("already exit");
+                 }
+                 else{
+                    var pass= document.getElementById("signup-password").value;
+                    var conf_pass= document.getElementById("signup-password-confirm").value;
+                    var user_name = document.getElementById("signup-usernme").value;
+                    if (pass != conf_pass)
+                    {
+                        alert("Please make sure that password and confirm are same! ")
+
+                    }
+                    else if (pass == "" || pass == null || conf_pass=="" || conf_pass == null || user_name=="" || user_name == null){
+                        alert("Please fill all the requried field ")
+                    }
+                    else if(pass==conf_pass ) {
+                        var dataregister= {  'password' : $('#signup-password').val(),
+                        'secretkey':"t",
+                        'userid' : $('#signup-usernme').val()};
+                        // console.log(dataregister);
+                    $.ajax({
+                        type: 'POST', // form submit method get/post
+                        url: 'https://aquapp.azurewebsites.net/adduser/',    
+                        data:JSON.stringify(dataregister),
+                        // dataType: 'json',
+                        contentType: 'application/json',
+                        success: function(response){
+                            if(response=="User added Succesfully"){
+                            alert ("You have been successfully registered")
+                            window.location.href="Login.html"
+                            }
+                        
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                 alert(textStatus + " " + errorThrown);
+            }
+                    });
+
+} 
+                 }
+               }
+      });
+
+});
+         $("#btn-login").on('click',function() {
+
+
+                    var login_pass= document.getElementById("login-pass").value;
+                    var logni_username= document.getElementById("login-usernme").value;
+                    if(login_pass=="" || login_pass== null || logni_username =="" || logni_username==null){
+                        alert("Username and password can't be null")
+                    }
+                    else{
+                    var lgin_data= {  'password' :login_pass,
+                        'secretkey':"t",
+                        'userid' : logni_username
+         };
+                 $.ajax({
+                     type: 'POST', // form submit method get/post
+                     url: 'https://aquapp.azurewebsites.net/authenticate/',    
+                     data:JSON.stringify(lgin_data),
+                     dataType: 'json',
+                     contentType: 'application/json',
+                     success: function(response){
+                         if(response== true){
+                        var username_page = logni_username;
+                        window.localStorage.setItem("username_page",  JSON.stringify(username_page));
+                        window.location.href= "index.html" ;
+
+                    }
+                       else{
+                        alert("The user name and password didn't match, check again");
+
+                       }
+                     
+                     },
+                     error: function(jqXHR, textStatus, errorThrown) {
+              alert("The user name and password didn't match, check again");
+         }
+                 });
+                }
+
+              
+   
+
+});
+                
+              
+
+function getLocation(){
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+          } 
+          else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }}
+          function showLoading() {
+    $("#loadingScreen").show();
+}
+
+function hideLoading() {
+    $("#loadingScreen").hide();
+}
+          function showPosition(position) {
+            var lat =  position.coords.latitude;
+            var lon= position.coords.longitude;
+            console.log(lat);
+            console.log(lon);
+            showLoading();
+            $.ajax({
+              type: 'get',
+              url: 'https://aquapp.azurewebsites.net/WeatherAPI/',
+              data: {
+                "lat": lat,
+                "lon":  lon
+              }, 
+              success: function (data) {
+                var newData= data;
+                console.log(data);
+                window.localStorage.setItem("newData",  JSON.stringify(newData));
+                var href = $(this).attr('href');
+                window.location.href= "activity.html";
+                hideLoading();
+              }});
+     
+
+            }
+            function getPlanned(){
+$.ajax({
+        type: 'get',
+        url: 'https://aquapp.azurewebsites.net/getSavedActivitiseByUserId/',
+        data: {
+          "userid": username
+        },
+        success: function (data) {
+            var historyArray= data;
+            sessionStorage.setItem("historyArray",  JSON.stringify(data));
+       console.log(historyArray)
+       var href = $(this).attr('href');
+                window.location.href= "saved_activities.html";
+
+        }});}
+
+
+                </script>
+            </div>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+        <div class="container">
+            <div class="row small text-center">
+            <div class="col-sm-8">
+                <!--Column1-->
+                <div class="footer-pad">
+                <h6 >Popular Services</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#"></a></li>
+                    <li><a href="javascript:" onclick="getLocation()">Plan Activity</a></li>
+                    <li><a href="javascript:" onclick="getPlanned()">Saved Activities</a></li>
+                    <li><a href="information.html">Information</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <!--Column1-->
+                <div class="footer-pad">
+                <h6 >Website Information</h6>
+                <ul class="list-unstyled">
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="index.html#about">Our Mission</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="container"><div class="small text-center text-footer">Copyright © 2020 - Start Bootstrap</div></div>
+        </footer>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
+        <script src="js/scripts.js"></script>
+        <script src="js/login.js"></script>
+    </body>
+    </html>

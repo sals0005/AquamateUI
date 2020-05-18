@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    
+    <title>Aqua-Mate</title>
+
+    <link rel="stylesheet" href="css/planned.css" />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link  rel="stylesheet" href="css/styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"
+    ></script>
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+  </head>
+  <body id="page-top">
+     
+   
+    <script async defer js.src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Aqua-Mate</a
+><button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#services">Services</a></li>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#about"
+                >Our Mission</a
+              >
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger" id="reomve" href="Login.html" >Login</a>
+              <a class="nav-link js-scroll-trigger" id="logout" href="" ><h3 class="nav-link js-scroll-trigger login" id="login" >  </h3></a>
+              <ul class="dropdown-menu" id="dropdown-menu">
+                <li ><a href="#" onclick="logout()">Logout</a></li>
+               
+               </ul>
+            </li>
+
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="planedhead">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10">
+
+              <div class="row mt align-items-center justify-content-center text-center">
+
+                <div class="col-md-3 col-sm-3 col-6 mb">
+                  <div class="darkblue-panel pn2">
+                  <div class="darkblue-header">
+                    <h6 class="text-gray-75 font-weight-light text-center">Kayaking</h6>
+                  </div>
+                  <!-- <div class="overallweathers"> -->
+                  <!-- <h6 class="text-white" id="overallweather"  ></h6> -->
+                   <a onclick="getType('Kayaking')" ><img src="assets/img/Kayaking2.png" width="50%"></a>
+                    </div>
+                  </div>
+                
+                  <div class="col-md-3 col-sm-3 col-6 mb">
+                    <div class="darkblue-panel pn2">
+                      <div class="darkblue-header">
+                        <h6 class="text-gray-75 font-weight-lighter text-center">Surfing</h6>
+                      </div>
+                      <!-- <div class="overallweathers"> -->
+                      <!-- <h6 class="text-white" id="overallweather"  ></h6> -->
+                      <a onclick="getType('Surfing')" ><img src="assets/img/surfing.png" width="50%"></a>  
+                        </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-6 mb">
+                    <div class="darkblue-panel pn2">
+                      <div class="darkblue-header">
+                        <h6 class="text-gray-75 font-weight-light text-center">Swimming</h6>
+                     
+                      </div>
+                      <!-- <div class="overallweathers"> -->
+                      <!-- <h6 class="text-white" id="overallweather"  ></h6> -->
+                      <a onclick="getType('Swimming')" > <img src="assets/img/swim.png" width="50%"></a>
+                        </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-6 mb">
+                    <div class="darkblue-panel pn2">
+                      <div class="darkblue-header">
+                        <h6 class="text-gray-75 font-weight-light text-center">Paddling</h6>
+                      </div>
+                      <!-- <div class="overallweathers"> -->
+                      <!-- <h6 class="text-white" id="overallweather"  ></h6> -->
+                      <a onclick="getType('Paddling')" > <img src="assets/img/paddling.png" width="68%"></a>
+                        </div>
+                  </div>
+                </div>
+<br>
+        <div class="row mt align-items-center justify-content-center text-center">
+
+        <div class="col-md-6 col-sm-12 mb">
+            <div class="darkblue-panel pn2">
+              <div class="darkblue-header">
+                <h5 class="text-gray-75 font-weight-light text-center">Your Saved Activities</h5>
+                <br><br>
+              </div>
+              <!-- <div id="content" style="overflow-x:auto;">
+                <table class="table table-borderless"> -->
+                  
+               <h4 class="text-navy-50" id="clear">Please Select the type of activity above </h4>  
+                          
+                 <ul style="column-count: 2;" >
+                  <li id="quu"  class="text-navy-50" 
+                  ></li>
+                  
+
+                  
+
+                  <li id="quu2"  class="text-navy-50" 
+                  ></li>
+
+                  
+
+              
+                 
+                  <li id="quu3"  class="text-navy-50" 
+                  ></li>
+
+                  
+
+                
+                 
+                  <li id="quu4"  class="text-navy-50" 
+                  ></li>
+
+                  
+
+                </ul> 
+
+<!-- <div id="quu"></div> -->
+<br>
+                <!-- </table>
+                </div> -->
+          
+            <!-- </div> -->
+            </div>
+            <!--  /darkblue panel -->
+            
+          </div>
+         
+        <div class="col-md-6 col-sm-12 mb">
+          <div class="darkblue-panel pn2">
+            <div class="darkblue-header">
+              <h5 class="text-gray-75 font-weight-light text-center"> Activity</h5>
+              <br>
+            </div>
+            <div id="content" style="overflow-x:auto;">
+
+            <table class="table table-borderless">
+              
+<div id="details" class="text-navy-50">Please Click on an item from the list on the right to see the details of the activity</div>
+<br>
+<div class="row">
+  <div class="col-md-6">  
+    <img id="activiy_image" src="" alt=""  width="30%" >
+
+  </div>
+  <div class="col-md-6">  
+
+    <div id="shareBtn" class="btn btn-light clearfix"><i class="fab fa-facebook" style="color:#4267b2;"></i>  Share 
+    </div>
+<!-- <button class="btn btn-light text-center clearfix" id="delete" type="button" ><i class="fas fa-trash-alt" style="color:#4267b2;"></i> Delete</button> -->
+</div>
+  <br>  <br>
+</div>
+              </table>
+              </div>
+        
+          <!-- </div> -->
+          </div>
+          <!--  /darkblue panel -->
+        </div>
+          </div>
+</div>
+    </div></div>
+<script>
+     var username_page = "";
+          var username ="";
+          //  var arrLinks =[];
+          username = JSON.parse(window.localStorage.getItem("username_page"));
+          if(username!= null){
+            document.getElementById('reomve').style.display = 'none';     // hide
+            var welcome = "Welcome: "+ username;
+          document.getElementById("login").innerText =welcome;
+          }
+          else{
+             document.getElementById('dropdown-menu').style.display = 'none';     // hide
+            
+          }
+        
+                  var historyArray = "";
+                  var activityHistories ="";
+                  activityHistories = JSON.parse(sessionStorage.getItem("historyArray"));
+                  var result = activityHistories.filter(item => item.type === 'Kayaking');
+                  var result2 = activityHistories.filter(item => item.type === 'Surfing');
+                  var result3 = activityHistories.filter(item => item.type === 'Swimming');
+                  var result4 = activityHistories.filter(item => item.type === 'Paddling');
+             
+                   console.log(activityHistories);
+                   console.log(result);
+                   console.log(result4);
+                   function getType(activity_type){
+                  
+                    
+                    document.getElementById('clear').style.display="none";
+
+                document.getElementById('quu2').style.display="none";
+                document.getElementById('quu3').style.display="none";
+                document.getElementById('quu4').style.display="none";
+
+                    document.getElementById('quu').style.display="none";
+                    $("#quu").empty().append();
+                    $("#quu2").empty().append();
+                    $("#quu3").empty().append();
+                    $("#quu4").empty().append();
+                    console.log(result4);
+
+                     if( activity_type== "Kayaking"){
+                      if(result.length<1){
+alert("You don't have any kayaking plan, please select another one") }
+                 $.each(result, function( index, value ) {
+                  document.getElementById('quu').style.display="inline";
+
+
+                    //  $("ul").append("<li><a onclick='getDetails'(+quote.userId+) href=''>"+value.location+"</a></li>");
+  $("#quu").append('<div class="time" style="padding:5px;" onclick="getDetails(\''+value.activityid+'\')"> '+value.date+' </div>');
+
+
+});
+  }
+                  else if(activity_type=="Surfing" ){
+                    if(result2.length<1){
+alert("You don't have any surfing plan, please select another one") }
+                    $.each(result2, function( index, value ) {
+                      document.getElementById('quu2').style.display="inline";
+
+                        //  $("ul").append("<li><a onclick='getDetails'(+quote.userId+) href=''>"+value.location+"</a></li>");
+  $("#quu2").append('<div class="time" style="padding:5px;" onclick="getDetails(\''+value.activityid+'\')"> On '+value.date+' </div>');
+
+});
+
+
+
+}
+else if(activity_type=="Swimming" ){
+  if(result3.length<1){
+alert("You don't have any swimming plan, please select another one") }
+$.each(result3, function( index, value ) {
+  document.getElementById('quu3').style.display="inline";
+  console.log(result3);
+
+    //  $("ul").append("<li><a onclick='getDetails'(+quote.userId+) href=''>"+value.location+"</a></li>");
+$("#quu3").append('<div class="time" style="padding:5px;" onclick="getDetails(\''+value.activityid+'\')"> On '+value.date+' </div>');
+
+});
+
+
+
+}
+else if(activity_type=="Paddling" ){
+  if(result4.length<1){
+alert("You don't have any paddling plan, please select another one") }
+$.each(result4, function( index, value ) {
+  
+  document.getElementById('quu4').style.display="inline";
+ 
+    //  $("ul").append("<li><a onclick='getDetails'(+quote.userId+) href=''>"+value.location+"</a></li>");
+$("#quu4").append('<div class="time" style="padding:5px;" onclick="getDetails(\''+value.activityid+'\')"> On '+value.date+'  </div>');
+
+});
+
+
+
+
+}
+
+}
+function getDetails(activity_id){
+            console.log(activity_id)
+                    var activityId = activity_id;
+
+                                  $.ajax({
+                                            type: 'get',
+                                            url: 'https://aquapp.azurewebsites.net/getSavedActivityByActivityandUserId/',
+                                            data: {
+                                              "activityid": activityId,
+                                              "userid": username
+                                              },
+                                              success: function (data) {
+                                                var type = data.type;
+                                                var time = data.time;
+                                                var location = data.location;
+                                                var date = data.date;
+                                                document.getElementById("details").innerText ="Activity: "+type + "\n Location: " + location + "\n at: "+ date +"," +time;
+                                               
+                                                if (type=="Swimming"){
+                                                  var activity_icon = "../assets/img/icons8-swimming-80.png"
+                    $("#activiy_image").attr("src", activity_icon);
+
+                    
+                                                }
+                                                else if (type=="Surfing")
+                                                {
+                                                  var activity_icon = "../assets/img/icons8-surf-80.png"
+                    $("#activiy_image").attr("src", activity_icon);
+
+                    
+                                                }
+                                                else if (type=="Kayaking")
+                                                {
+                                                  var activity_icon = "../assets/img/icons8-canoe-80.png"
+                    $("#activiy_image").attr("src", activity_icon);
+
+                    
+                                                }
+                                                else if (type=="Paddling")
+                                                {
+                                                  var activity_icon = "../assets/img/icons8-sup-80.png"
+                    $("#activiy_image").attr("src", activity_icon);
+
+                    
+                                                }
+                                                document.getElementById('shareBtn').onclick = function() {
+            
+            var facebook_share= "I did " + type + " in " + location + " at " + date +", "+ time;
+            
+            console.log(facebook_share);
+                                 FB.ui({
+                                   display: 'popup',
+                                   method: 'share',
+                                   caption: "test",
+                                   description: "ttttttt",
+                                   quote:facebook_share,
+                                   href: 'https://www.aquamate.live/'
+                                   
+                                 }, function(response){});
+                               }  
+                                              }});
+                                               document.getElementById('shareBtn').style.display = 'inline-block';   
+                                              //  document.getElementById('delete').style.display = 'inline-block';   
+
+               } 
+                     
+               window.fbAsyncInit = function() {
+                     FB.init({
+                       appId            : '1664935076994210',
+                       cookie           : true,
+                       xfbml            : true,
+                       version          : 'v6.0'
+                     });
+                     FB.AppEvents.logPageView();
+           
+           };
+           
+           (function(d, s, id){
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) {return;}
+              js = d.createElement(s); js.id = id;
+              js.src = "https://connect.facebook.net/en_US/sdk.js";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            function logout(){
+              localStorage.clear();
+              window.location.href="index.html";
+            }
+
+            function getLocation(){
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+          } 
+          else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }}
+          function showLoading() {
+    $("#loadingScreen").show();
+}
+
+function hideLoading() {
+    $("#loadingScreen").hide();
+}
+          function showPosition(position) {
+            var lat =  position.coords.latitude;
+            var lon= position.coords.longitude;
+            console.log(lat);
+            console.log(lon);
+            showLoading();
+            $.ajax({
+              type: 'get',
+              url: 'https://aquapp.azurewebsites.net/WeatherAPI/',
+              data: {
+                "lat": lat,
+                "lon":  lon
+              }, 
+              success: function (data) {
+                var newData= data;
+                console.log(data);
+                window.localStorage.setItem("newData",  JSON.stringify(newData));
+                var href = $(this).attr('href');
+                window.location.href= "activity.html";
+                hideLoading();
+              }});
+     
+
+            }       
+</script>
+    <script src="js/scripts.js"></script>
+
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+      <div class="container">
+        <div class="row small text-center">
+    
+          <div class="col-sm-8">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h6 >Popular Services</h6>
+              <ul class="list-unstyled">
+                <li><a href="#"></a></li>
+                <li><a href="javascript:" onclick="getLocation()">Plan Activity</a></li>
+                <li><a href="saved_activities.html">Saved Activities</a></li>
+                <li><a href="information.html">Information</a></li>
+                <li><a href="#"></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h6 >Website Information</h6>
+              <ul class="list-unstyled">
+                <li><a href="index.html#contact">Contact Us</a></li>
+                <li><a href="index.html#about">Our Mission</a></li>
+          </ul>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    <br>
+      <div  class="container">
+        <div class="small text-center text-footer">
+          Copyright © 2020 - Start Bootstrap
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

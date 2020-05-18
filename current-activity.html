@@ -1,0 +1,901 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Aqua-Mate</title>
+
+    <link rel="stylesheet" href="css/current.css" />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link  rel="stylesheet" href="css/styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"
+    ></script>
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+  </head>
+  <body id="page-top">
+     
+   
+    <script async defer js.src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Aqua-Mate</a
+><button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#services">Services</a></li>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html#about"
+                >Our Mission</a
+              >
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger" id="reomve" href="Login.html" >Login</a>
+              <a class="nav-link js-scroll-trigger" id="logout" href="" ><h3 class="nav-link js-scroll-trigger login" id="login" >  </h3></a>
+              <ul class="dropdown-menu" id="dropdown-menu">
+                <li ><a href="#" onclick="logout()">Logout</a></li>
+               
+               </ul>
+            </li>
+
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <div class="secondhead">
+          <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10">
+              <div class="row mt align-items-center justify-content-center text-center">
+                
+
+                <div class="col-md-12 col-sm-12 mb">
+                  <div class="navy-panel pn ">
+                    <div class="grey-header">
+                      <h5>The Weather for this week at <h5 id="weather_location"> </h5></h5>
+                    </div>
+
+                    <div class="overall ">
+                    <!-- <canvas id="serverstatus01" height="120" width="120"></canvas> -->
+                    <div id="content" style="overflow-x:auto;">
+                    <table class="table table-borderless" style="margin-left: 20px;" >
+                    
+                      <tr>
+                        <td ><img id="day0_image" src="" alt=""  width="30%">
+                        </td>
+                        <td ><img id="day1_image" src="" alt=""  width="30%">
+                        </td>
+                        <th scope="col" ><img id="day2_image" src="" alt=""  width="30%"></th>
+                        <th scope="col" ><img id="day3_image" src="" alt=""  width="30%"></th>
+                        <th scope="col" ><img id="day4_image" src="" alt=""  width="30%"></th>
+                        <th scope="col" ><img id="day5_image" src="" alt=""  width="30%"></th>
+                        <th scope="col" ><img id="day6_image" src="" alt=""  width="30%"></th>
+                        <th scope="col" ><img id="day7_image" src="" alt=""  width="30%"></th></tr> 
+                    
+                      <tr>
+                        <td scope="row" id="feels_zero"></td>
+
+                        <td id="feels_one"></td>
+                        <td id="feels_two"></td>
+                        <td id="feels_three"></td>
+                        <td id="feels_four"></td>
+                        <td id="feels_five"></td>
+                        <td id="feels_six"></td>
+                        <td id="feels_seven"></td>
+
+
+                      </tr>
+                    
+                      </table>   
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+              <div class="row mt align-items-center justify-content-center text-center">
+               
+                
+                <!-- /col-md-4-->
+                <div class="col-md-6 col-sm-6 mb">
+                  <div class="darkblue-panel pn2">
+                    <div class="darkblue-header">
+                      <h5>Temperature </h5>
+                    </div>
+                    <!-- <div class="overallweathers"> -->
+                    <!-- <h6 class="text-white" id="overallweather"  ></h6> -->
+                    <div id="content" style="overflow-x:auto;">
+
+                    <table class="table table-borderless">
+                      <tr>
+                        <th ></th>
+                        <th scope="col" >Morning</th>
+                        <th scope="col">Day</th>
+                        <th scope="col">Evening</th>
+                        <th scope="col" >Night</th>
+                      </tr>
+                      <tr>
+                        <th scope="row">Temp:</th>
+                        <td id="overallweather3"></td>
+                     <td id="overallweather1"></td>
+                     <td id="overallweather2"></td>
+                     <td id="overallweather4"></td></tr> 
+                     <tr>
+                      <th scope="row">Feels:</th>
+                   <td id="feels2"></td>
+                   <td id="feels"></td>
+                   <td id="feels1"></td>
+                   <td id="feels3"></td></tr>
+                      </table>
+                      </div>
+                
+                  <!-- </div> -->
+                  </div>
+                  <!--  /darkblue panel -->
+                </div>
+                <div class="col-md-6 col-sm-6 mb">
+                  <!-- REVENUE PANEL -->
+                  <div class="green-panel pn2">
+                    <div class="green-header">
+                      <h5> Weather</h5>
+                    </div>
+                    <div style="overflow-x:auto;">
+          
+                      <table class="table table-borderless">
+                      
+                       
+                       <tr>
+                    <td id="cloudes"></td>
+                     <td id="humidity"></td>
+                     <td id="rain"></td>
+                     </tr>
+                     <tr>
+                      
+                       <td id="uvi"></td>
+                       <td id="wind_speed"></td>
+                      <td id="pressure"></td></tr>
+                        </table>
+                        </div>
+                  </div>
+                </div> 
+      </div>
+      <div class="row mt align-items-center justify-content-center text-center">
+                
+
+        <div class="col-md-12 col-sm-12 mb">
+          <div class="grey-panel pn">
+            <div class="grey-header">
+              <h5>Plan Your Activity</h5>
+            </div>
+
+              <div id="content" style="overflow-x:auto;">
+              <table class="table table-borderless" style="margin-left: 20px;">
+                          <!-- <canvas id="serverstatus01" height="120" width="120"></canvas> -->
+              <tr>
+                 <td scope="col"><h6 id="overall" style="margin-right: 20px;" ></h6>
+              </td>
+              <td scope="col">
+                
+                <label  class="text-black-75 font-weight-light text-left" for="input-location">Select Type: </label>
+                
+              <select name="type" class="input-control" id="input-type" style=" height: 32px; width: 170px;">
+                                <option value="none">Please Choose</option>
+                                <option value="Surfing">Surfing</option>
+                                <option value="Swimming">Swimming</option>
+                                <option value="Kayaking">Kayaking</option>
+                                <option value="Paddling">Stand up Paddling(SUP)</option>
+                              </select>
+                            </td>
+              <td scope="col">
+                  <div id="shareBtn" class="btn btn-light clearfix"><i class="fab fa-facebook" style="color:#4267b2;"></i>  Share 
+                                   </div>
+                    <!-- <div id="ogBtn" class="btn btn-success clearfix">Simple OG Dialog</div> -->
+                    <button class="btn btn-light text-center clearfix" id="save" type="button" ><i class="far fa-save" style="color:#4267b2;"></i> Save</button>
+
+                   <script>
+                      window.fbAsyncInit = function() {
+                     FB.init({
+                       appId            : '1664935076994210',
+                       cookie           : true,
+                       xfbml            : true,
+                       version          : 'v6.0'
+                     });
+                     FB.AppEvents.logPageView();
+           
+           };
+           
+           (function(d, s, id){
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) {return;}
+              js = d.createElement(s); js.id = id;
+              js.src = "https://connect.facebook.net/en_US/sdk.js";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            
+            document.getElementById('shareBtn').onclick = function() {
+              var time =  document.getElementById("input-time").value;
+              var type =  document.getElementById("input-type").value;
+              var facebook_share= "I will go " + type + " in " + plocation + " at " + date +", "+ time;
+              
+              console.log(facebook_share);
+                                   FB.ui({
+                                     display: 'popup',
+                                     method: 'share',
+                                     caption: "test",
+                                     description: "ttttttt",
+                                     quote:facebook_share,
+                                     href: 'https://www.aquamate.live/'
+                                     
+                                   }, function(response){});
+                                 }
+                                  $('#input-type').change (function () {
+                                    var type =  document.getElementById("input-type").value;
+                                    // if (  wind_speed >= "7.8" && type =="Surfing")
+                                    // {
+                                      
+                                    //   alert("The wind is so high for surfing, be careful.");
+                                    //   }
+                                      
+                                    //   else if (wind_speed >= "5.2" && type =="Paddling" )
+                                    // {
+                                   
+                                    //   alert("The wind speed is not suitable if you are a beginner.");
+                                    //   if (  cloudes >= "50.2" && rain>= "moderate rain" )
+                                    // {
+                                   
+                                    //   alert("It is a little bit cloudy, please be safe.");
+                                    //   }
+                                    //   }
+                                    if(type =="Surfing" || type =="Paddling" || type=="Kayaking")
+                                    {
+                                      
+                                      if (  wind_speed >=7.8 && wind_speed >= 5.2 && cloudes >= 60.20 && rains == "moderate rain"){
+                                        alert("It's gonna be cloudy and rainy, and the wind speed is high, be careful.");
+                                      }
+                                      else if(wind_speed >= 5.2 && wind_speed <=7.8 && cloudes >= 60.20 && rains == "moderate rain" )
+                                      {
+                                        alert("It's gonna be cloudly and rainy, and the wind speed is not suitable if you are a beginner.");
+                                      }
+                                      else if (  wind_speed >=7.8 && wind_speed >= 5.2  && cloudes >= 60.20){
+                                        alert("It's gonna be cloudy, and the wind speed is high, be careful.");
+                                      }
+                                      else if(wind_speed >= 5.2 && wind_speed <=7.8  && cloudes >= 60.20)
+                                      {
+                                        alert("It's gonna be cloudy, and the wind speed is not suitable if you are a beginner.");
+                                      } 
+                                      else if (  wind_speed >=7.8 && wind_speed >= 5.2 && rains == "moderate rain" ){
+                                        alert("It's gonna be rainy, and the wind speed is high, be careful.");
+                                      }
+                                      else if(wind_speed >= 5.2 && wind_speed <=7.8  && rains == "moderate rain")
+                                      {
+                                        alert("It's gonna be rainy, and the wind speed is not suitable if you are a beginner.");
+                                      }
+                                      else if (  wind_speed >=7.8 && wind_speed >= 5.2 ){
+                                        alert("The wind speed is high, be careful.");
+                                      }
+                                      else if(wind_speed >= 5.2 && wind_speed <=7.8 )
+                                      {
+                                        alert("The wind speed is not suitable if you are a beginner.");
+                                      }
+                                     
+                                      else if (cloudes >= 60.20 ){
+                                      alert("It's going to be cloudy, please watch out.");
+                                      }
+                                      else if ( rains == "moderate rain" || rains == "heavy rain" ){
+                                      alert("It's going to be rainy, please  watch out.");
+                                      }
+                                      
+                                    }
+                                    else if (type =="Swimming"){
+                                      console.log(rains)
+                                      console.log(cloudes)
+
+                                      if (cloudes >= 60.20 && rains == "moderate rain" ){
+                                        alert("It's going to be rainy and cloudy, please watch out.");
+
+                                      }
+                                      else if (cloudes >= 60.20 ){
+                                      alert("It's going to be cloudy, please watch out.");
+                                      }
+                                      else if ( rains == "moderate rain" || rains == "heavy rain" ){
+                                      alert("It's going to be rainy, please watch out.");
+                                      }
+                                      
+                                    }
+                                      
+                                        
+                                      } );
+
+                $("#save").on('click',function(){
+                  var time =  document.getElementById("input-time").value;
+              var type =  document.getElementById("input-type").value;
+           
+                  
+                    if(username== null){
+                      alert("Please login frist");
+
+                    }
+                    else if(uvi>= 8){
+                                        alert("The UV index is high, make sure to wear sunscreen in every 2 hours.");
+                                      }
+
+                    else{
+              var id = "id" + Math.random().toString(16).slice(2)
+                  var saveData = {
+                              'location':plocation,
+                              'type': type,
+                              'date': links.date,
+                              'time': time,
+                              'lat': links.lat,
+                              'lng': links.lng,
+                              'userid': username,
+                              'id': id
+
+                            };
+                            // console.log(saveData);
+                             $.ajax({
+                               type: 'post',
+                               url: 'https://aquapp.azurewebsites.net/saveActivity/',
+                               data: JSON.stringify(saveData),
+                              //  dataType: 'json',
+                               contentType: 'application/json',
+                               success: function (response) {
+                                 if(response=="Activity saved Succesfully")
+                                 var savedActivity= saveData;
+                                 window.localStorage.setItem("savedActivity",  JSON.stringify(savedActivity));
+                                 console.log(savedActivity);
+                                 window.location.href= "Planned-activity.html" ;
+                                console.log(response);
+                               },
+                                error: function (xhr, status) {
+                                    console.log(status);
+                                    console.log(xhr.responseText); 
+                                }
+                                
+                                });  }
+                              });
+                              function logout(){
+              localStorage.clear();
+              window.location.href="index.html";
+            }
+
+         
+               </script>
+               </td>
+              </tr>
+              <tr>
+                
+                <td scope="col">Change date: <input name="date"  class="input-control" type="text" id="input-date" tabindex="3"    />
+                  <!-- <a type="submit" id="reload" value="test" style="color:blue" > <u>Check</u></a>   -->
+               
+               <br><br>   <button class="btn btn-light text-center" id="reload"  type="submit" >Check!</button>
+
+      </td>
+                
+                <td scope="col">
+                  <label  class="text-black-75 font-weight-light text-left" for="input-location" >Select Time: </label>
+              
+                  <input name="time"  class="input-control " id="input-time" type="text" tabindex="4"  />
+                </td>
+                <td>
+                  
+                </td>
+               
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  
+                </td>
+              </tr>
+              </table>
+            </div>
+
+            
+          </div>
+        </div>
+       
+        
+
+    </div>
+  </div>
+
+  </div>
+
+        <script>
+           var username_page = "";
+          var username ="";
+          //  var arrLinks =[];
+          username = JSON.parse(window.localStorage.getItem("username_page"));
+          if(username!= null){
+            document.getElementById('reomve').style.display = 'none';     // hide
+            var welcome = "Welcome: "+ username;
+          document.getElementById("login").innerText =welcome;
+          }
+          else{
+             document.getElementById('dropdown-menu').style.display = 'none';     // hide
+            
+          }
+          var globalar = "";
+          var links = "";
+          var largerglobalar = "";
+          var daily ="";
+          //  var arrLinks =[];
+          links = JSON.parse(window.localStorage.getItem("globalar"));
+          daily= JSON.parse(window.localStorage.getItem("largerglobalar"));
+          //var storedData = sessionStorage.getItem("data");
+
+          console.log(daily);
+          console.log(links);
+
+          var day0_date =daily.daily[0].dt;
+          var day1_date =daily.daily[1].dt;
+          var day2_date =daily.daily[2].dt;
+          var day3_date =daily.daily[3].dt;
+          var day4_date =daily.daily[4].dt;
+          var day5_date =daily.daily[5].dt;
+          var day6_date =daily.daily[6].dt;
+          var day7_date =daily.daily[7].dt;
+          var day0_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[0].weather[0].icon +
+            ".png";
+          var day1_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[1].weather[0].icon +
+            ".png";
+            var day2_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[2].weather[0].icon +
+            ".png";
+            var day3_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[3].weather[0].icon +
+            ".png";
+            var day4_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[4].weather[0].icon +
+            ".png";
+            var day5_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[5].weather[0].icon +
+            ".png";
+            var day6_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[6].weather[0].icon +
+            ".png";
+            var day7_icon =
+            "https://openweathermap.org/img/w/" +
+            daily.daily[7].weather[0].icon +
+            ".png";
+            var day0_overview=daily.daily[0].weather[0].main;
+          var day1_overview=daily.daily[1].weather[0].main;
+          var day2_overview =daily.daily[2].weather[0].main;
+          var day3_overview =daily.daily[3].weather[0].main;
+          var day4_overview=daily.daily[4].weather[0].main;
+          var day5_overview =daily.daily[5].weather[0].main;
+          var day6_overview =daily.daily[6].weather[0].main;
+          var day7_overview =daily.daily[7].weather[0].main;
+          var day0_max_temp =daily.daily[0].temp.max;
+          var day1_max_temp =daily.daily[1].temp.max;
+          var day2_max_temp =daily.daily[2].temp.max;
+          var day3_max_temp =daily.daily[3].temp.max;
+          var day4_max_temp =daily.daily[4].temp.max;
+          var day5_max_temp =daily.daily[5].temp.max;
+          var day6_max_temp =daily.daily[6].temp.max;
+          var day7_max_temp =daily.daily[7].temp.max;
+          var day0_min_temp =daily.daily[0].temp.min;
+          var day1_min_temp =daily.daily[1].temp.min;
+          var day2_min_temp =daily.daily[2].temp.min;
+          var day3_min_temp =daily.daily[3].temp.min;
+          var day4_min_temp =daily.daily[4].temp.min;
+          var day5_min_temp =daily.daily[5].temp.min;
+          var day6_min_temp =daily.daily[6].temp.min;
+          var day7_min_temp =daily.daily[7].temp.min;
+          console.log(day1_date);
+          var plocation = links.location;
+          console.log(plocation);
+          var iconcode = links.weaterResponse.weather[0].icon;
+          console.log(iconcode);
+          // var type = links.type;
+          var date = links.date;
+          console.log(date);
+          // var time = links.time;
+          var lat = links.lat;
+          var lng = links.lng;
+          var iconurl =
+            "https://openweathermap.org/img/w/" +
+            links.weaterResponse.weather[0].icon +
+            ".png";
+          var temp = links.weaterResponse.temp.day;
+          var eve_temp = links.weaterResponse.temp.eve;
+          var max_temp = links.weaterResponse.temp.max;
+          var min_temp = links.weaterResponse.temp.min;
+          var morn_temp = links.weaterResponse.temp.morn;
+          var night_temp = links.weaterResponse.temp.night;
+          var wind_speed = links.weaterResponse.wind_speed;
+          var overall = links.weaterResponse.weather[0].main;
+          var humidity = links.weaterResponse.humidity;
+          var uvi = links.weaterResponse.uvi;
+          var wind_speed = links.weaterResponse.wind_speed;
+          var feels = links.weaterResponse.feels_like.day;
+          var eve_feels = links.weaterResponse.feels_like.eve;
+          var morn_feels = links.weaterResponse.feels_like.morn;
+          var night_feels= links.weaterResponse.feels_like.night;
+          var cloudes= links.weaterResponse.clouds;
+          var humidity = links.weaterResponse.humidity;
+          var rain = links.weaterResponse.rain;
+          var rains = links.weaterResponse.weather[0].description;
+
+          var pressure = links.weaterResponse.pressure;
+          if (rain == null)
+          {
+            rain = "0";
+          }
+          var uvi = links.weaterResponse.uvi;
+          var wind_speed = links.weaterResponse.wind_speed;
+          
+          //document.getElementById("activity").innerText= ;
+          // document.getElementById("temp").innerText = Math.round(temp) + "°\n\n" + overall;
+          // document.getElementById("description").innerText = overall;
+          //  document.getElementById("feels_overview").innerText = "Feels Like "+ Math.round(feels) + "°\n" +Math.round(max_temp) +"°/" + Math.round(min_temp)+"°";
+          //  document.getElementById("overallweather").innerText = "The temperature:  \n\n"+Math.round(temp)
+          //   + "° \xa0\xa0 " +Math.round(eve_temp)+ "°  \xa0\xa0 "  + Math.round(max_temp)+ "° \xa0\xa0  " +Math.round(min_temp) 
+          //   + "°  \xa0\xa0 " + Math.round(morn_temp)+ "°  \xa0\xa0 " +Math.round(night_temp)+ "°  \xa0\xa0 "  + "\n Day   Evening  Max  Min   Morning  Night";
+          // document.getElementById("overallweather").innerText = " \xa0\xa0  Day \xa0\xa0 Evening \xa0\xa0 Morn  \xa0\xa0 Night";  
+          document.getElementById("overallweather1").innerText = "\xa0\ " + Math.round(temp) + "° ";
+          document.getElementById("overallweather2").innerText =  "\xa0\ " + Math.round(eve_temp) + "° ";
+          document.getElementById("overallweather3").innerText =   "\xa0\ " + Math.round(morn_temp) + "°" ;
+          document.getElementById("overallweather4").innerText =   "\xa0\ " + Math.round(night_temp) + "°" ;  
+          document.getElementById("feels").innerText = "\xa0\ " + Math.round(feels) + "° ";
+          document.getElementById("feels1").innerText =  "\xa0\ " + Math.round(eve_feels) + "° ";
+          document.getElementById("feels2").innerText =   "\xa0\ " + Math.round(morn_feels) + "°" ;
+          document.getElementById("feels3").innerText =   "\xa0\ " + Math.round(night_feels) + "°" ;  
+          document.getElementById("cloudes").innerText =  cloudes + "%\n Cloudiness";
+          document.getElementById("humidity").innerText =  humidity + "%\n Humidity";
+          document.getElementById("rain").innerText =  rain + "%\n Rain";
+          document.getElementById("uvi").innerText =  uvi + " \n UV index";
+          document.getElementById("wind_speed").innerText =  wind_speed + " meter/sec\n Wind speed";
+          document.getElementById("pressure").innerText =  pressure + " hPa \n Pressure";
+          document.getElementById("feels_zero").innerText = day0_overview + "\n" +Math.round(day0_max_temp) +"°/" + Math.round(day0_min_temp)+"°\n" + day0_date;
+          document.getElementById("feels_one").innerText = day1_overview + "\n" +Math.round(day1_max_temp) +"°/" + Math.round(day1_min_temp)+"°\n" + day1_date;
+          document.getElementById("feels_two").innerText = day2_overview+ "\n" +Math.round(day2_max_temp) +"°/" + Math.round(day2_min_temp)+"°\n" + day2_date;
+          document.getElementById("feels_three").innerText = day3_overview + "\n" +Math.round(day3_max_temp) +"°/" + Math.round(day3_min_temp)+"°\n" + day3_date;
+          document.getElementById("feels_four").innerText = day4_overview+ "\n" +Math.round(day4_max_temp) +"°/" + Math.round(day4_min_temp)+"°\n" + day4_date;
+          document.getElementById("feels_five").innerText = day5_overview + "\n" +Math.round(day5_max_temp) +"°/" + Math.round(day5_min_temp)+"°\n" + day5_date;
+          document.getElementById("feels_six").innerText = day6_overview + "\n" +Math.round(day6_max_temp) +"°/" + Math.round(day6_min_temp)+"°\n"+ day6_date;
+          document.getElementById("feels_seven").innerText = day7_overview + "\n" +Math.round(day7_max_temp) +"°/" + Math.round(day7_min_temp)+"°\n" + day7_date;
+
+          
+
+
+          // document.getElementById("overallweather2").innerHTML = Math.round(max_temp) + "°  \xa0\xa0 \n Max \xa0\xa0";  
+          // document.getElementById("overallweather3").innerText = Math.round(min_temp) + "° \xa0\xa0 \n Min \xa0\xa0";  
+          // document.getElementById("overallweather4").innerText = Math.round(morn_temp) + "° \xa0\xa0 \n Morn \xa0\xa0";  
+          // document.getElementById("overallweather5").innerText = Math.round(night_temp) + "°  \xa0\xa0\n Night";  
+//           function testFun(variable){
+
+//             document.getElementById("ttt").innerText =
+//             "Activity  :" +
+//             type +
+//             " \n Location : " +
+//             plocation +"\n Date " + date ;
+// }
+//           // document.getElementById("weathers").innerText =
+          //   temp +
+          //   "\nhigh" +
+          //   "\n The wind speed is: " +
+          //   wind_speed +
+          //   "\n The humidity: " +
+          //   humidity +
+          //   "\n The UVI: " +
+          //   uvi +
+          //   "\n The wind speed: " +
+          //   wind_speed;
+          document.getElementById("weather_location").innerText =plocation;
+          document.getElementById("overall").innerText =
+           
+            "Location : " +
+            plocation +"\n Date: " + date ;
+			
+			
+
+          $("#wicon").attr("src", iconurl);
+          $("#day0_image").attr("src", day0_icon);
+          $("#day1_image").attr("src", day1_icon);
+          $("#day2_image").attr("src", day2_icon);
+          $("#day3_image").attr("src", day3_icon);
+          $("#day4_image").attr("src", day4_icon);
+          $("#day5_image").attr("src", day5_icon);
+          $("#day6_image").attr("src", day6_icon);
+          $("#day7_image").attr("src", day7_icon);
+         
+             
+
+
+          
+          $('#reload').click(function() {
+            var x =  
+                document.getElementById("input-date").value;
+            var testData = {
+                   'location'              : plocation,
+                   'type'             : "",
+                   'date'    :x ,
+                      'time'    :"",
+                      'lat'    : links.lat,
+                      'lng'    : links.lng
+               };
+           
+              console.log(x);
+console.log(testData);
+    $.ajax({
+        type: "POST",
+        url: "https://aquapp.azurewebsites.net/PlanActivity/",
+        data: JSON.stringify(testData),
+        dataType: 'json',
+          contentType: 'application/json',
+          success: function (data) {
+
+            var globalar= data;
+
+window.localStorage.setItem("globalar",  JSON.stringify(data));
+$.ajax({
+        type: 'get',
+        url: 'https://aquapp.azurewebsites.net/WeatherAPI/',
+    data: {
+      "lat": data.lat,
+      "lon": data.lng
+  },
+   
+   
+        success: function (largerdata) {
+var largerglobalar= largerdata;
+window.localStorage.setItem("largerglobalar",  JSON.stringify(largerglobalar));
+         window.location.href= "current-activity.html" ;
+        }
+      });
+        
+
+          }});});
+        
+//           $('#plan-activity').click(function() {
+//             var date =  
+//                 document.getElementById("input-date").value;
+//                 var time =  
+//                 document.getElementById("input-time").value;
+
+//                 var type =  
+//                 document.getElementById("input-type").value;
+
+//             var planData = {
+//                    'location'              : plocation,
+//                    'type'             : type,
+//                    'date'    :date ,
+//                       'time'    :time,
+//                       'lat'    : links.lat,
+//                       'lng'    : links.lng
+//                };
+           
+// console.log(planData);
+//     $.ajax({
+//         type: "POST",
+//         url: "https://aqua-app.azurewebsites.net/PlanActivity/",
+//         data: JSON.stringify(planData),
+//         dataType: 'json',
+//           contentType: 'application/json',
+//           success: function (data) {
+
+//             var planar= data;
+// console.log(planar)
+// window.localStorage.setItem("planar",  JSON.stringify(planar));
+//           }});});
+
+          var date=new Date();
+ $('#input-date').datepicker({
+  icons:
+      {
+          next: 'fa fa-angle-right',
+          previous: 'fa fa-angle-left',
+          up: 'fa fa-arrow-circle-up',
+          down: 'fa fa-angle-down'
+      },
+      minDate: 0,
+      startDate:date,
+      format: 'dd/mm/yyyy',
+   endDate: '+7d',
+   autoclose: true,
+   widgetPositioning: {
+               horizontal: 'right',
+               vertical: 'auto'
+           }
+}).datepicker("setDate",links.date);;
+function getLocation(){
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+          } 
+          else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }}
+          function showLoading() {
+    $("#loadingScreen").show();
+}
+
+function hideLoading() {
+    $("#loadingScreen").hide();
+}
+          function showPosition(position) {
+            var lat =  position.coords.latitude;
+            var lon= position.coords.longitude;
+            console.log(lat);
+            console.log(lon);
+            showLoading();
+            $.ajax({
+              type: 'get',
+              url: 'https://aquapp.azurewebsites.net/WeatherAPI/',
+              data: {
+                "lat": lat,
+                "lon":  lon
+              }, 
+              success: function (data) {
+                var newData= data;
+                console.log(data);
+                window.localStorage.setItem("newData",  JSON.stringify(newData));
+                var href = $(this).attr('href');
+                window.location.href= "activity.html";
+                hideLoading();
+              }});
+     
+
+            }
+
+            function getPlanned(){
+$.ajax({
+        type: 'get',
+        url: 'https://aquapp.azurewebsites.net/getSavedActivitiseByUserId/',
+        data: {
+          "userid": username
+        },
+        success: function (data) {
+            var historyArray= data;
+            sessionStorage.setItem("historyArray",  JSON.stringify(data));
+       console.log(historyArray)
+       var href = $(this).attr('href');
+                window.location.href= "saved_activities.html";
+
+        }});}
+
+        var today = new Date()
+
+        var dd = today.getDate().toString().padStart(2, "0");;
+        var mm = (today.getMonth()+1).toString().padStart(2, "0");; 
+var yyyy = today.getFullYear();
+var full = dd+"/" +mm +"/"+ yyyy;
+var dateToday = new Date(); 
+console.log(full);
+console.log(links.date)
+if(full == links.date){
+  $('#input-time').datetimepicker({
+    icons:
+         {
+             up: 'fa fa-angle-up',
+             down: 'fa fa-angle-down'
+         },
+         format: 'hh:mm A',
+         minDate: dateToday
+
+
+});}
+else {
+  $('#input-time').datetimepicker({
+    icons:
+         {
+             up: 'fa fa-angle-up',
+             down: 'fa fa-angle-down'
+         },
+         format: 'hh:mm A',
+
+
+});
+}
+
+
+        </script>  
+     
+        
+      </div>
+      
+    <script src="js/scripts.js"></script>
+
+
+
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+      <div class="container">
+        <div class="row small text-center">
+    
+          <div class="col-sm-8">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h6 >Popular Services</h6>
+              <ul class="list-unstyled">
+                <li><a href="#"></a></li>
+                <li><a href="javascript:" onclick="getLocation()">Plan Activity</a></li>
+                <li><a href="javascript:" onclick="getPlanned()">Saved Activities</a></li>
+                <li><a href="information.html">Information</a></li>
+          <li><a href="#"></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h6 >Website Information</h6>
+              <ul class="list-unstyled">
+                <li><a href="index.html#contact">Contact Us</a></li>
+                <li><a href="index.html#about">Our Mission</a></li>
+              </ul>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    <br>
+      <div  class="container">
+        <div class="small text-center text-footer">
+          Copyright © 2020 - Start Bootstrap
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

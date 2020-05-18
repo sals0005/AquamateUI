@@ -1,0 +1,480 @@
+<!DOCTYPE html >
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Aqua-Mate</title>
+        <!-- Google fonts-->
+        <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" /> -->
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script> -->
+        <!-- Core theme JS-->
+<!-- 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" /> -->
+        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS81s60D1Ycf1aHA94yyQSG9D6n3RJS4k&libraries=places&callback=initMap" defer></script>
+
+        <script type="text/javascript" src="js/map.js">  </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+
+      </head>
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="index.html">Aqua-Mate</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#services">Services</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#about">Our Mission</a></li>
+              <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger" id="reomve" href="Login.html" >Login</a>
+                <a class="nav-link js-scroll-trigger" id="logout" href="" ><h3 class="nav-link js-scroll-trigger login" id="login" >  </h3></a>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                  <li ><a href="#" onclick="logout()">Logout</a></li>
+                 
+                 </ul>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- currenthead-->
+      <div class="currenthead">
+        <div class="container">
+         
+            <div class="row mt align-items-center justify-content-center text-center">
+               <div class="col-md-12 col-sm-12 mb">
+                 <div class="navy-panel pn">
+                   <div class="grey-header">
+                     <h5>The Weather for this week at 
+                       <h5 id="weather_location">Your location 
+                       </h5>
+                    </h5>
+                  </div>
+                  <div class="overall" id="weather">
+                    <div id="content" style="overflow-x:auto;">
+                      <table class="table table-borderless" style="margin-left: 20px;">
+                        <tr>
+                          <td ><img id="day0_image" src="" alt=""  width="30%"></td>
+                          <td ><img id="day1_image" src="" alt=""  width="30%"></td>
+                          <th scope="col" ><img id="day2_image" src="" alt=""  width="30%"></th>
+                          <th scope="col" ><img id="day3_image" src="" alt=""  width="30%"></th>
+                          <th scope="col" ><img id="day4_image" src="" alt=""  width="30%"></th>
+                          <th scope="col" ><img id="day5_image" src="" alt=""  width="30%"></th>
+                          <th scope="col" ><img id="day6_image" src="" alt=""  width="30%"></th>
+                          <th scope="col" ><img id="day7_image" src="" alt=""  width="30%"></th>
+                        </tr> 
+                         <tr>                          <td scope="row" id="feels_zero"></td>
+
+                          <td id="feels_one"></td>
+                          <td id="feels_two"></td>
+                          <td id="feels_three"></td>
+                          <td id="feels_four"></td>
+                          <td id="feels_five"></td>
+                          <td id="feels_six"></td>
+                          <td id="feels_seven"></td>
+                         </tr>
+                         
+                        </table>
+                           
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              <!-- </div> -->
+              <br> <br>
+              <form  id="myForm" name="theForm" >
+              <div class="row mt align-items-center justify-content-center text-center">
+                <div class="col-lg-6 col-md-6 text-center">
+                  <div id="map">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 boxs">
+                  <div class="form-box" data-errormsg="">
+                    <label  class="text-white-75 font-weight-light text-left" for="input-location" >Select Location</label>
+                    <input name="location" class="form-control"  type="text" id="input-location" placeholder="Search location" />
+                      <!-- <a type="submit" id="reload" value="test" style="color:blue;float: right"> <u>Check</u></a>   -->
+                  </div>
+                 
+                  <div class="form-box" data-errormsg="">
+                    <label class="text-white-75 font-weight-light text-left" for="input-date">Select Date</label>
+                    <input name="date"  class="form-control" type="text" id="input-date" />
+                  </div>
+                  <div id="loadingScreen">
+                    <img id="loadingImage" src="assets/img/loader.gif" alt="">
+                  </div>
+
+                  <script type="text/javascript" >
+                  //to user datepicker
+                  var date=new Date();
+                  $('#input-date').datepicker({
+                    icons:
+                    {
+                       next: 'fa fa-angle-right',
+                       previous: 'fa fa-angle-left',
+                       up: 'fa fa-arrow-circle-up',
+                       down: 'fa fa-angle-down'
+                      },
+                      minDate: 0,
+                      startDate:date,
+                      format: 'dd/mm/yyyy',
+                      endDate: '+7d',
+                      autoclose: true,
+                      widgetPositioning: {
+                        horizontal: 'right',
+                        vertical: 'auto'
+                      }}).datepicker("setDate",date);
+                      </script>
+                    <div class="form-box">
+                      <button id="button-send"  type="submit" >Check Weather! 
+                      </button>
+                      <img src="assets/img/loader.gif" class="loading-image" style="height: 30px" />
+                    </div>
+                  </div>
+                </div>
+                <input id="lblresult" name="lat" type="hidden" >
+                <input id="longitude" name="lng" type="hidden" >
+               </form>
+              </div>
+               <script>  
+               function showLoading() {
+    $("#loadingScreen").show();
+}
+
+function hideLoading() {
+    $("#loadingScreen").hide();
+}
+               //to update the weather box based on users selection of the location
+               $('#input-location').change (function () {
+               
+                 setTimeout(function(){
+                   var location_update = {
+                     'lat'    : $('input[name=lat]').val(),
+                     'lon'    : $('input[name=lng]').val(),
+                    };
+                     console.log(location_update)
+                     showLoading();
+                     $.ajax({
+                       type: 'get',
+                       url: 'https://aquapp.azurewebsites.net/WeatherAPI/',
+                       data: location_update,
+                      success: function (largerdata) {
+                        var newData= largerdata;
+                        console.log(newData);
+                        window.localStorage.setItem("newData",  JSON.stringify(newData));
+                        loadDivData();                  hideLoading();
+
+                         //window.location.reload("activity.html");
+                         // $('#weather').load(" #weather > *");
+                         //$("#weather").html(largerdata);
+                         //$("#weather").load(location.href+" #weather>*","");
+                         //  window.location.href= "activity.html" ;
+                        }
+                      });
+                      var reload_location = document.getElementById("input-location").value;
+                      document.getElementById("weather_location").innerText =reload_location;
+                    }, 1000);
+
+                  });
+
+                  //call api to print the weather inforation on the box
+                  var newData = "";
+                  var daily ="";
+                  //  var arrLinks =[];
+                  var loadDivData = function() {
+                    daily= JSON.parse(window.localStorage.getItem("newData"));
+                    //var storedData = sessionStorage.getItem("data");
+                    console.log(daily);
+                    var day0_date =daily.daily[0].dt;
+                    var day1_date =daily.daily[1].dt;
+                    var day2_date =daily.daily[2].dt;
+                    var day3_date =daily.daily[3].dt;
+                    var day4_date =daily.daily[4].dt;
+                    var day5_date =daily.daily[5].dt;
+                    var day6_date =daily.daily[6].dt;
+                    var day7_date =daily.daily[7].dt;
+                    var day0_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[0].weather[0].icon +
+                    ".png";
+                    var day1_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[1].weather[0].icon +
+                    ".png";
+                    var day2_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[2].weather[0].icon +
+                    ".png";
+                    var day3_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[3].weather[0].icon +
+                    ".png";
+                    var day4_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[4].weather[0].icon +
+                    ".png";
+                    var day5_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[5].weather[0].icon +
+                    ".png";
+                    var day6_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[6].weather[0].icon +
+                    ".png";
+                    var day7_icon =
+                    "https://openweathermap.org/img/w/" +
+                    daily.daily[7].weather[0].icon +
+                    ".png";
+                    var day0_overview=daily.daily[0].weather[0].main;
+                    var day1_overview=daily.daily[1].weather[0].main;
+                    var day2_overview =daily.daily[2].weather[0].main;
+                    var day3_overview =daily.daily[3].weather[0].main;
+                    var day4_overview=daily.daily[4].weather[0].main;
+                    var day5_overview =daily.daily[5].weather[0].main;
+                    var day6_overview =daily.daily[6].weather[0].main;
+                    var day7_overview =daily.daily[7].weather[0].main;
+                    var day0_max_temp =daily.daily[0].temp.max;
+                    var day1_max_temp =daily.daily[1].temp.max;
+                    var day2_max_temp =daily.daily[2].temp.max;
+                    var day3_max_temp =daily.daily[3].temp.max;
+                    var day4_max_temp =daily.daily[4].temp.max;
+                    var day5_max_temp =daily.daily[5].temp.max;
+                    var day6_max_temp =daily.daily[6].temp.max;
+                    var day7_max_temp =daily.daily[7].temp.max;
+                    var day0_min_temp =daily.daily[0].temp.min;
+                    var day1_min_temp =daily.daily[1].temp.min;
+                    var day2_min_temp =daily.daily[2].temp.min;
+                    var day3_min_temp =daily.daily[3].temp.min;
+                    var day4_min_temp =daily.daily[4].temp.min;
+                    var day5_min_temp =daily.daily[5].temp.min;
+                    var day6_min_temp =daily.daily[6].temp.min;
+                    var day7_min_temp =daily.daily[7].temp.min;
+                    console.log(day7_min_temp);
+                    document.getElementById("feels_zero").innerText = day0_overview + "\n" +Math.round(day0_max_temp) +"°/" + Math.round(day0_min_temp)+"°\n" + day0_date;
+                    document.getElementById("feels_one").innerText = day1_overview + "\n" +Math.round(day1_max_temp) +"°/" + Math.round(day1_min_temp)+"°\n" + day1_date;
+                    document.getElementById("feels_two").innerText = day2_overview+ "\n" +Math.round(day2_max_temp) +"°/" + Math.round(day2_min_temp)+"°\n" + day2_date;
+                    document.getElementById("feels_three").innerText = day3_overview + "\n" +Math.round(day3_max_temp) +"°/" + Math.round(day3_min_temp)+"°\n" + day3_date;
+                    document.getElementById("feels_four").innerText = day4_overview+ "\n" +Math.round(day4_max_temp) +"°/" + Math.round(day4_min_temp)+"°\n" + day4_date;
+                    document.getElementById("feels_five").innerText = day5_overview + "\n" +Math.round(day5_max_temp) +"°/" + Math.round(day5_min_temp)+"°\n" + day5_date;
+                    document.getElementById("feels_six").innerText = day6_overview + "\n" +Math.round(day6_max_temp) +"°/" + Math.round(day6_min_temp)+"°\n"+ day6_date;
+                    document.getElementById("feels_seven").innerText = day7_overview + "\n" +Math.round(day7_max_temp) +"°/" + Math.round(day7_min_temp)+"°\n" + day7_date;
+                    $("#day0_image").attr("src", day0_icon);
+                    $("#day1_image").attr("src", day1_icon);
+                    $("#day2_image").attr("src", day2_icon);
+                    $("#day3_image").attr("src", day3_icon);
+                    $("#day4_image").attr("src", day4_icon);
+                    $("#day5_image").attr("src", day5_icon);
+                    $("#day6_image").attr("src", day6_icon);
+                    $("#day7_image").attr("src", day7_icon);
+                  };
+                  loadDivData();
+                  </script>
+
+                  <script>
+                     var username_page = "";
+          var username ="";
+          //  var arrLinks =[];
+          username = JSON.parse(window.localStorage.getItem("username_page"));
+          if(username!= null){
+            document.getElementById('reomve').style.display = 'none';     // hide
+            var welcome = "Welcome: "+ username;
+          document.getElementById("login").innerText =welcome;
+          }else{
+             document.getElementById('dropdown-menu').style.display = 'none';     // hide
+            
+          }
+                    // this is used to valdiate the user input
+                  function validateForm()
+                  {
+                     var a=document.forms["myForm"]["location"].value;
+                     var c=document.forms["myForm"]["date"].value;
+                       if (a==null || a=="" )
+                       {
+                         alert("Please Fill Location field");
+                         return false;
+                        }
+                        else if ( c==null || c=="" )
+                        {
+                          alert("Please fill Date")
+                          return false;
+                        }
+                        // to send the user input to the server 
+                        else{
+                            $("#button-send").parent().addClass("loading");
+                            // Add Success Class After 3.7 Seconds
+                            setTimeout(function(){
+                              //$("#button-send").addClass("success");
+                              $("#button-send").parent().removeClass("loading");
+                            }, 3000);
+                            var formData = {
+                              'location': $('input[name=location]').val(),
+                              'type': $('select[name=type]').val(),
+                              'date': $('input[name=date]').val(),
+                              'time': $('input[name=time]').val(),
+                              'lat': $('input[name=lat]').val(),
+                              'lng': $('input[name=lng]').val()
+                            };
+                             $.ajax({
+                               type: 'post',
+                               url: 'https://aquapp.azurewebsites.net/PlanActivity/',
+                               data: JSON.stringify(formData),
+                               dataType: 'json',
+                               contentType: 'application/json',
+                               success: function (data) {
+                                 var globalar= data;
+                                 window.localStorage.setItem("globalar",  JSON.stringify(data));
+                                 $.ajax({
+                                   type: 'get',
+                                   url: 'https://aquapp.azurewebsites.net/WeatherAPI/',
+                                   data: {
+                                     "lat": data.lat,
+                                     "lon": data.lng
+                                    },
+                                    success: function (largerdata) {
+                                      var largerglobalar= largerdata;
+                                      window.localStorage.setItem("largerglobalar",  JSON.stringify(largerglobalar));
+                                      window.location.href= "current-activity.html" ;
+                                    }
+                                  });
+                                }
+                              });
+                             }// else
+                            }
+                            $(function () {
+                              $('form').on('submit', function (e) {
+                                e.preventDefault();
+                                // $("#button-send-1").click(function(){
+                                //   //$(this).addClass("active-load");
+                                //   $(this).parent().addClass("loading");
+                                //   // Add Success Class After 3.7 Seconds
+                                //   setTimeout(function(){
+                                //     //$("#button-send").addClass("success");
+                                //     $("#button-send").parent().removeClass("loading");
+                                //   }, 3000);
+                                //  });
+                                 validateForm();
+                                 });
+                                });
+                                function logout(){
+              localStorage.clear();
+              window.location.href="index.html";
+            }
+            function getLocation(){
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+          } 
+          else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }}
+          function showLoading() {
+    $("#loadingScreen").show();
+}
+
+function hideLoading() {
+    $("#loadingScreen").hide();
+}
+          function showPosition(position) {
+            var lat =  position.coords.latitude;
+            var lon= position.coords.longitude;
+            console.log(lat);
+            console.log(lon);
+            showLoading();
+            $.ajax({
+              type: 'get',
+              url: 'https://aquapp.azurewebsites.net/WeatherAPI/',
+              data: {
+                "lat": lat,
+                "lon":  lon
+              }, 
+              success: function (data) {
+                var newData= data;
+                console.log(data);
+                window.localStorage.setItem("newData",  JSON.stringify(newData));
+                var href = $(this).attr('href');
+                window.location.href= "activity.html";
+                hideLoading();
+              }});
+     
+
+            }
+
+            function getPlanned(){
+$.ajax({
+        type: 'get',
+        url: 'https://aquapp.azurewebsites.net/getSavedActivitiseByUserId/',
+        data: {
+          "userid": username
+        },
+        success: function (data) {
+            var historyArray= data;
+            sessionStorage.setItem("historyArray",  JSON.stringify(data));
+       console.log(historyArray)
+       var href = $(this).attr('href');
+                window.location.href= "saved_activities.html";
+
+        }});}
+
+                    </script>
+                    </div>
+
+                    </div>
+           <!-- Footer-->
+           <footer class="bg-light py-5">
+             <div class="container">
+               <div class="row small text-center">
+                 <div class="col-sm-8">
+                   <!--Column1-->
+                   <div class="footer-pad">
+                     <h6 >Popular Services</h6>
+                     <ul class="list-unstyled">
+                      <li><a href="#"></a></li>
+                      <li><a href="javascript:" onclick="getLocation()">Plan Activity</a></li>
+                      <li><a href="javascript:" onclick="getPlanned()">Saved Activities</a></li>
+                      <li><a href="information.html">Information</a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                <!--Column1-->
+                <div class="footer-pad">
+                  <h6 >Website Information</h6>
+                  <ul class="list-unstyled">
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="index.html#about">Our Mission</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <br>
+          <div class="container"><div class="small text-center text-footer">Copyright © 2020 - Start Bootstrap</div></div>
+        </footer>
+        <script src="js/scripts.js"></script>
+        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script> -->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+
+
+      </body>
+</html>
